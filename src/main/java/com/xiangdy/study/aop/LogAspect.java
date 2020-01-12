@@ -1,6 +1,7 @@
 package com.xiangdy.study.aop;
 
 import org.aspectj.lang.JoinPoint;
+import org.aspectj.lang.ProceedingJoinPoint;
 import org.aspectj.lang.annotation.*;
 
 import org.springframework.stereotype.Component;
@@ -53,6 +54,14 @@ public class LogAspect {
     @AfterThrowing(value = "pointCut()",throwing = "exception")
     public void divAfterThrowing(JoinPoint pointcut,Exception exception){
         print("AfterThrowing   ",pointcut,exception);
+    }
+
+    @Around("pointCut()")
+    public int divAround(ProceedingJoinPoint proceedingJoinPoint) throws Throwable {
+        System.out.println(proceedingJoinPoint.getSignature().getName()+"环绕前");
+        proceedingJoinPoint.proceed();
+        System.out.println(proceedingJoinPoint.getTarget()+"环绕后");
+        return 3;
     }
 
 

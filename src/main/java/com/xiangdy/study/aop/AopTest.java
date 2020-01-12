@@ -12,6 +12,7 @@ public class AopTest {
     public static void main(String[] args) {
         AnnotationConfigApplicationContext applicationContext = new AnnotationConfigApplicationContext(AopConfig.class);
         MathDivision mathDivision = (MathDivision) applicationContext.getBean("mathDivision");
-        mathDivision.div(1,0);
+        int a = mathDivision.div(1,1);
+        System.out.println(a);
     }
 }
