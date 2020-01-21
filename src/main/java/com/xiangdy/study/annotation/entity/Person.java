@@ -12,12 +12,9 @@ import org.springframework.transaction.annotation.Transactional;
 @Data
 public class Person {
 
-
     String name;
     Integer age;
 
-
-    @Transactional
     public void init(){
         System.out.println("初始化");
     }

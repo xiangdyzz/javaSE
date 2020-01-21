@@ -5,6 +5,9 @@ import org.springframework.beans.factory.support.RootBeanDefinition;
 import org.springframework.boot.autoconfigure.EnableAutoConfiguration;
 import org.springframework.context.annotation.ComponentScan;
 import org.springframework.context.annotation.EnableAspectJAutoProxy;
+import org.springframework.context.annotation.Import;
+import org.springframework.context.annotation.ImportBeanDefinitionRegistrar;
+import org.springframework.core.type.AnnotationMetadata;
 
 /**
  * @author xiangDY
@@ -13,6 +16,6 @@ import org.springframework.context.annotation.EnableAspectJAutoProxy;
  */
 @ComponentScan("com.xiangdy.study.aop") //配置容器扫描bean路径
 @EnableAspectJAutoProxy  //开启aop自动代理
-public class AopConfig {
+public class AopConfig implements ImportBeanDefinitionRegistrar{
 
 }

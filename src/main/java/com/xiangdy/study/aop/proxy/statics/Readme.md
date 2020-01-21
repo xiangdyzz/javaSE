@@ -1,5 +1,5 @@
-## 静态代理是利用java的多态实现的
-- 登录业务接口
+## 静态代理是利用java的多态实现的 
+- 登录业务接口 
 ```java
 public interface LoginService {
     void login();

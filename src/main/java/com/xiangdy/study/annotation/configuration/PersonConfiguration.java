@@ -22,5 +22,4 @@ import java.security.PublicKey;
 @ComponentScan("com.xiangdy.study.annotation")
 public class PersonConfiguration {
 
-
 }

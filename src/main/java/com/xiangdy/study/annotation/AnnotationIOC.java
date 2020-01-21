@@ -4,6 +4,7 @@ import com.xiangdy.study.annotation.configuration.PersonConfiguration;
 import com.xiangdy.study.annotation.entity.Car;
 import com.xiangdy.study.annotation.entity.Person;
 import com.xiangdy.study.annotation.entity.PersonFactory;
+import com.xiangdy.study.annotation.entity.SpringBean;
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.context.ApplicationContext;
 import org.springframework.context.annotation.AnnotationConfigApplicationContext;
@@ -26,9 +27,7 @@ public class AnnotationIOC {
 
     public static void main(String[] args) {
         ApplicationContext application = new AnnotationConfigApplicationContext(PersonConfiguration.class);
-        //Arrays.stream(application.getBeanDefinitionNames()).forEach(name -> System.out.println(name));
-
-       // System.out.println(application.getBean("car"));
-
+        SpringBean springBean = (SpringBean) application.getBean("springBean");
+        ((AnnotationConfigApplicationContext) application).close();
     }
 }

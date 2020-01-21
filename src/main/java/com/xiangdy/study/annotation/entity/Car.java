@@ -6,6 +6,7 @@ import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.beans.factory.annotation.Qualifier;
 import org.springframework.beans.factory.annotation.Value;
 import org.springframework.boot.context.properties.ConfigurationProperties;
+import org.springframework.context.annotation.Bean;
 import org.springframework.context.annotation.PropertySource;
 import org.springframework.stereotype.Component;
 
@@ -35,7 +36,7 @@ public class Car implements InitializingBean, DisposableBean {
        public  String name;
        @Value("#{23 - 2}")  //使用SPEL表达式赋值
        public Integer age;
-       @Value(value = "${car.nickName}") //第三种获取PropertiesResource中的缓存的Key值赋值
+       @Value(value = "${car.nickName") //第三种获取PropertiesResource中的缓存的Key值赋值
        public String nickName;
        private Integer money;
 
