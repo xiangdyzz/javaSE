@@ -1,14 +1,12 @@
 package com.xiangdy.study.annotation.entity;
 
+
+
 import org.springframework.beans.factory.DisposableBean;
 import org.springframework.beans.factory.InitializingBean;
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.beans.factory.annotation.Qualifier;
 import org.springframework.beans.factory.annotation.Value;
-import org.springframework.boot.context.properties.ConfigurationProperties;
-import org.springframework.context.annotation.Bean;
-import org.springframework.context.annotation.PropertySource;
-import org.springframework.stereotype.Component;
 
 import javax.xml.soap.Name;
 import java.math.BigDecimal;
@@ -29,7 +27,7 @@ public class Car implements InitializingBean, DisposableBean {
      */
        @Qualifier("person1")
        @Autowired
-       private Person person2;
+       private com.xiangdy.study.annotation.entity.Person person2;
 
 
        @Value("2") //普通直接反射获取到普通的值
